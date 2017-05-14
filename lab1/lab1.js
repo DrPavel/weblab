@@ -15,7 +15,6 @@ function tel_poz(){
 	if((poz<110)&(lab==true)){
 		tel_1.style.left=poz*(Math.PI)*Math.cos(corner)+120+"px";
 		tel_1.style.top=poz*(Math.PI)*Math.sin(corner)+299+"px";
-		
 		var a=-9.82*Math.sin(corner)-frict*9.82*Math.cos(corner);
 		poz=speed_0*time+a*time*time/2;
 		speed=speed_0+a*time;
