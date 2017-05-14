@@ -1,0 +1,36 @@
+#sten{
+	background-image:url(../img/lab3_sten.png);
+	width:345px;
+	height:423px;
+	top:30px;
+	left:200px;
+	position:absolute;
+}
+
+#kol{
+	background-image:url(../img/lab3_kol.png);
+	width:254px;
+	height:254px;
+	left:278px;
+	top:51px;
+	position:absolute;
+	transform-origin:127px 127px 0;
+	transform:rotate(15deg)
+}
+
+#block{
+	background-image:url(../img/lab3_block.png);
+	width:13px;
+	height:14px;
+	position:absolute;
+	left:227px;
+	top:50px;
+}
+
+.gruz{
+	background:#F00;
+	width:10px;
+	height:10px;
+	position:absolute;
+	left:50px;
+}

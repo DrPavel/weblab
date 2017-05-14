@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../style.css"  />
+<link rel="stylesheet" href="lab1.css"  />
+<script type="text/javascript" src="lab1.js"></script>
+<title>ВИРТУАЛЬНАЯ ЛАБОРАТОРИЯ - Механика №1</title>
+</head>
+<body>
+    <div id='page'>
+        <center>
+		    <h1>ВИРТУАЛЬНАЯ ЛАБОРАТОРИЯ</h1>
+		    <hr />
+		    <h2>Механика - Лабораторная работа №1</h2>
+	    </center>
+    	<div id="lab">
+		    <div id="exp">
+			    <div id="sten"></div>
+                <div id="sto"></div>
+                <div id="tel_1"></div>
+		    </div>
+		    <div id="panel">
+            	<div class="tab" id="time">t=0 мс.</div>
+                <div class="tab" id="pozition">x=0 мм.</div>
+                <div class="tab" id="speed">v=0 мм./мс.</div>
+                Масса:<br />
+                <input type="number" id="mass" onclick="" min="0" /><br  />
+                Коэфицент трения:<br />
+                <input type="number" id="frict"onclick="" min="0" /><br  />
+                Начальная скорость:<br />
+                <input type="number" id="speed_0" onclick="res_l();" /><br  />
+                Угол:<br />
+                <input type="number" id="corner" onclick="corner();" max="15" min="-15"/><br  />
+                
+                <input type="button" onclick="add_dat();" value="Добавить датчик" /><br />
+                <input type="button" onclick="start_l();" value="Старт" /><br />
+                <input type="button" onclick="stop_l();" value="Стоп" /><br />
+                <input type="button" onclick="res_l();" value="Сброс" /><br />
+		    </div>
+            <div class="graf" style="background-image:url(../img/xt.png)">
+				<svg id="graf_poz" xmlns="http://www.w3.org/2000/svg" version="1.1" width="375px" height="250px" style="left:0px;">
+
+				</svg>
+            </div>
+            <div class="graf" id="vt" style="top:250px; left: 375px; background-image:url(../img/vt.png)">
+				<svg id="graf_speed" xmlns="http://www.w3.org/2000/svg" version="1.1" width="375px" height="250px" style="left:0px;">
+					
+				</svg>
+            </div>
+	    </div>
+    <center><a href="../"><-НАЗАД</a></center>
+    <hr />
+    <center>2017</center><br />
+    </div>
+</body>
+</html>

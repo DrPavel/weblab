@@ -1,0 +1,67 @@
+body{
+	background:#CCC;
+	padding:0;
+}
+
+svg{
+	position:absolute;
+	
+}
+
+line{
+	stroke: #000;
+	stroke-width:2px;
+}
+
+#panel input{
+	width:150px;
+	height:40px;
+}
+
+#lab{
+	width:900px;
+	height:500px;
+	margin:auto;
+	position:relative;
+}
+
+#panel{
+	width:150px;
+	height:750px;
+	background:#F00;
+	right:0;
+	float: left;
+}
+
+.graf{
+	width:375px;
+	height:250px;
+	position:relative;
+	top:500px;
+}
+
+.dat{
+	width:60px;
+	height:50px;
+	background:#0F0;
+	text-align:center;
+	vertical-align:central;
+}
+
+.dat input{
+	width:50px;
+}
+
+#page{
+	width:1000px;
+	margin:auto;
+	background:#FFF;
+}
+
+
+#exp{
+	width:750px;
+	height:500px;
+	background-image:url(img/lab_bc.png);
+	float: left;
+}

@@ -1,0 +1,39 @@
+#tel_1{
+	width:51px;
+	height:26px; 
+	background-image:url(../img/lab1_tel_v.png);
+	position:absolute;
+	left:120px; 
+	top:299px;
+	transform-origin:0 0 0;
+	transform: rotate(0deg);
+}
+
+#sten{
+	background-image:url(../img/lab1_lin.png);
+	width:528px;
+	height:24px;
+	top:315px;
+	left:117px;
+	position:absolute;
+	transform-origin:0 0 0;
+	transform: rotate(0deg);
+}
+
+.dat{
+	position:relative;
+	left:10px;
+}
+
+#vt{
+	background:url(../img/vt.png);
+}
+
+#sto{
+	width:122px;
+	height:198px;
+	position:absolute;
+	top:282px;
+	left:7px;
+	background-image:url(../img/lab1_sto.png);	
+}
