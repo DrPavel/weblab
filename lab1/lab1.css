@@ -3,8 +3,8 @@
 	height:26px; 
 	background-image:url(../img/lab1_tel_v.png);
 	position:absolute;
-	left:120px; 
-	top:299px;
+	left:3px; 
+	top:-16px;
 	transform-origin:0 0 0;
 	transform: rotate(0deg);
 }

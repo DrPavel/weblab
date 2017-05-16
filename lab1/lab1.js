@@ -12,12 +12,12 @@ function tel_poz(){
 	mass=document.getElementById("mass").value;
 	corner=document.getElementById("corner").value*Math.PI / 180;
 	frict=document.getElementById("frict").value;
-	if((poz<110)&(lab==true)){
-		tel_1.style.left=poz*(Math.PI)*Math.cos(corner)+120+"px";
-		tel_1.style.top=poz*(Math.PI)*Math.sin(corner)+299+"px";
+	if((poz<100)&(lab==true)&(poz>=0)){
+		tel_1.style.left=poz*4.78+3+"px";
 		
-		var a=-9.82*Math.sin(corner)-frict*9.82*Math.cos(corner);
-		poz=speed_0*time+a*time*time/2;
+		var a=9.82*Math.sin(corner)-frict*9.82*Math.cos(corner);
+		poz=speed_0*time;//+a*time*time/2;
+		
 		speed=speed_0+a*time;
 		if((time%10==0)&(time!=0)){
 			document.getElementById("graf_speed").innerHTML+="<line x1='"+(time-10+10)+"' y1='"+(250-old_speed-10)+"' x2='"+(time+10)+"' y2='"+(250-speed-10)+"' />";
@@ -29,7 +29,7 @@ function tel_poz(){
 		document.getElementById("pozition").innerHTML="x="+(poz)+" мм."
 		document.getElementById("speed").innerHTML="v="+(speed)+" мм./мc."
 		time++;
-		setTimeout(tel_poz,1);
+		setTimeout(tel_poz,60);
 	}
 }
 
@@ -47,8 +47,7 @@ function res_l(){
 	lab=false;
 	poz=0;
 	time=0;
-	tel_1.style.left=poz+120+"px";
-	tel_1.style.top=poz+299+"px";
+	tel_1.style.left=poz+3+"px";
 	
 	document.getElementById("time").innerHTML="t=0 мс."
 	document.getElementById("pozition").innerHTML="x=0 мм."
@@ -59,7 +58,6 @@ function res_l(){
 
 function corner(){
 	sten.style.transform="rotate("+document.getElementById("corner").value+"deg)";
-	tel_1.style.transform="rotate("+document.getElementById("corner").value+"deg)";
 }
 
 function add_dat(){

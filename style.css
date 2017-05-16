@@ -9,23 +9,23 @@ svg{
 }
 
 line{
-	stroke: #000;
+	stroke: #F00;
 	stroke-width:2px;
 }
 
-#panel input{
+#panel input{/*кнопки и поля ввода*/
 	width:150px;
 	height:40px;
 }
 
-#lab{
+#lab{/*Поля проведения эксперемента*/
 	width:900px;
 	height:500px;
 	margin:auto;
 	position:relative;
 }
 
-#panel{
+#panel{/*Панель управления*/
 	width:150px;
 	height:750px;
 	background:#F00;

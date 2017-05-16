@@ -7,7 +7,7 @@
 <script type="text/javascript" src="lab1.js"></script>
 <title>ВИРТУАЛЬНАЯ ЛАБОРАТОРИЯ - Механика №1</title>
 </head>
-<body>
+<body onload='sten.style.transform=" rotate("+document.getElementById("corner").value+"deg)";'>
     <div id='page'>
         <center>
 		    <h1>ВИРТУАЛЬНАЯ ЛАБОРАТОРИЯ</h1>
@@ -16,9 +16,10 @@
 	    </center>
     	<div id="lab">
 		    <div id="exp">
-			    <div id="sten"></div>
+			    <div id="sten">
+					<div id="tel_1"></div>
+				</div>
                 <div id="sto"></div>
-                <div id="tel_1"></div>
 		    </div>
 		    <div id="panel">
             	<div class="tab" id="time">t=0 мс.</div>
@@ -31,7 +32,7 @@
                 Начальная скорость:<br />
                 <input type="number" id="speed_0" onclick="res_l();" /><br  />
                 Угол:<br />
-                <input type="number" id="corner" onclick="corner();" max="15" min="-15"/><br  />
+                <input type="number" id="corner" onclick='sten.style.transform=" rotate("+document.getElementById("corner").value+"deg)";' max="15" min="-15"/><br  />
                 
                 <input type="button" onclick="add_dat();" value="Добавить датчик" /><br />
                 <input type="button" onclick="start_l();" value="Старт" /><br />
