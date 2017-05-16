@@ -6,24 +6,34 @@ var dat=0;
 var old_speed=0;
 var old_poz=0;
 var speed=0;
+var a=0;
 
 function tel_poz(){
 	speed_0=document.getElementById("speed_0").value;
 	mass=document.getElementById("mass").value;
 	corner=document.getElementById("corner").value*Math.PI / 180;
 	frict=document.getElementById("frict").value;
-	if((poz<100)&(lab==true)&(poz>=0)){
-		tel_1.style.left=poz*4.78+3+"px";
+
+	
+	if((poz<100)&(lab==true)&(poz>=0)&(Math.sin(corner)>=frict*Math.cos(corner))){
+		tel_1.style.left=(poz/1)*4.78+3+"px";
 		
-		var a=9.82*Math.sin(corner)-frict*9.82*Math.cos(corner);
-		poz=speed_0*time;//+a*time*time/2;
+		a=9.82*Math.sin(corner)-frict*9.82*Math.cos(corner);
+		poz=speed_0*time+a*time*time/2;
 		
 		speed=speed_0+a*time;
 		if((time%10==0)&(time!=0)){
-			document.getElementById("graf_speed").innerHTML+="<line x1='"+(time-10+10)+"' y1='"+(250-old_speed-10)+"' x2='"+(time+10)+"' y2='"+(250-speed-10)+"' />";
+			var x1=time-10+10;
+			var x2=time+10;
+			var sy1=250-old_speed-10;
+			var sy2=250-speed-10;
+			var py1=250-old_poz-10;
+			var py2=250-poz-10;
 			old_speed=speed;
-			document.getElementById("graf_poz").innerHTML+="<line x1='"+(time-10+10)+"' y1='"+(250-old_poz-10)+"' x2='"+(time+10)+"' y2='"+(250-poz-10)+"' />";
 			old_poz=poz;
+			document.getElementById("graf_speed").innerHTML+="<line x1='"+x1+"' y1='"+sy1+"' x2='"+x2+"' y2='"+sy2+"' />";
+			document.getElementById("graf_poz").innerHTML+="<line x1='"+x1+"' y1='"+py1+"' x2='"+x2+"' y2='"+py2+"' />";
+
 		}
 		document.getElementById("time").innerHTML="t="+time+" мс."
 		document.getElementById("pozition").innerHTML="x="+(poz)+" мм."
@@ -47,6 +57,11 @@ function res_l(){
 	lab=false;
 	poz=0;
 	time=0;
+	
+	speed_0=document.getElementById("speed_0").value;
+	speed=document.getElementById("speed_0").value;
+	old_speed=document.getElementById("speed_0").value;
+	old_poz=0;
 	tel_1.style.left=poz+3+"px";
 	
 	document.getElementById("time").innerHTML="t=0 мс."
