@@ -14,21 +14,21 @@ line{
 }
 
 #panel input{/*кнопки и поля ввода*/
-	width:150px;
-	height:40px;
+	width:100px;
+	height:30px;
 }
 
 #lab{/*Поля проведения эксперемента*/
-	width:900px;
+	width:950px;
 	height:500px;
 	margin:auto;
 	position:relative;
 }
 
 #panel{/*Панель управления*/
-	width:150px;
+	width:200px;
 	height:750px;
-	background:#F00;
+	background:#ffe8bb;
 	right:0;
 	float: left;
 }
@@ -64,4 +64,26 @@ line{
 	height:500px;
 	background-image:url(img/lab_bc.png);
 	float: left;
+}
+
+#prib{
+	background-image:url(img/prib.png);
+	width:180px;
+	height:118px;
+	position:absolute;
+}
+
+.pan_ob{
+	width:180px;
+	height:44px;
+	background:#ffc85e;
+	padding:2px;
+	margin:auto;
+	margin-bottom:5px;
+	margin-top:5px;
+	border-radius:5px;
+	border:2px solid #630;
+	text-align:center;
+	vertical-align:central;
+	
 }
