@@ -37,3 +37,11 @@
 	left:7px;
 	background-image:url(../img/lab1_sto.png);	
 }
+
+.vor{
+	background-image:url(../img/vor.png);
+	width:23px;
+	height:54px;
+	position:absolute;
+	top:-52px;
+}

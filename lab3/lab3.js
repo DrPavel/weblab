@@ -1,7 +1,9 @@
-
-
 function tel_poz(){
-
+	
+	/*
+	var a=rs*m*g/;
+	var h=h0+;
+	var q=h*360/100;*/
 }
 
 function start_l(){
@@ -17,8 +19,8 @@ function res_l(){
 	lab=false;
 	poz=0;
 	time=0;
-	tel_1.style.left=poz+120+"px";
-	tel_1.style.top=poz+299+"px";
+	block.style.left=poz+227+"px";
+	block.style.top=poz+50+"px";
 	
 	document.getElementById("time").innerHTML="t=0 мс."
 	document.getElementById("pozition").innerHTML="x=0 мм."

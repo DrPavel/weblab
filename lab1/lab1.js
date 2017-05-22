@@ -1,4 +1,3 @@
-// JavaScript Document
 var time=0;
 var poz=0;
 var lab=false;
@@ -7,6 +6,26 @@ var old_speed=0;
 var old_poz=0;
 var speed=0;
 var a=0;
+var vor1_poz=10;
+var vor2_poz=50;
+
+function poz_vor_1(){
+	vor1_poz=document.getElementById("pozition_1").value;	
+	vor_1.style.left=((vor1_poz/1)*4.78+12)+"px";
+}
+
+function poz_vor_2(){
+	vor2_poz=document.getElementById("pozition_2").value;	
+	vor_2.style.left=((vor2_poz/1)*4.78+12)+"px";
+}
+
+function on_load(){
+	sten.style.transform=" rotate("+document.getElementById("corner").value+"deg)";
+	vor1_poz=document.getElementById("pozition_1").value;
+	vor2_poz=document.getElementById("pozition_2").value;	
+	vor_1.style.left=((vor1_poz/1)*4.78+12)+"px";
+	vor_2.style.left=((vor2_poz/1)*4.78+12)+"px";
+}
 
 function tel_poz(){
 	speed_0=document.getElementById("speed_0").value;
@@ -16,7 +35,15 @@ function tel_poz(){
 
 	
 	if((poz<100)&(lab==true)&(poz>=0)&(Math.sin(corner)>=frict*Math.cos(corner))){
-		tel_1.style.left=(poz/1)*4.78+3+"px";
+		tel_1.style.left=((poz/1)*4.78+3)+"px";
+		if(poz<vor1_poz){
+			document.getElementById("time_1").innerHTML="t<sub>1</sub>="+time+" с."
+			document.getElementById("speed_1").innerHTML="v<sub>1</sub>="+(Math.floor(speed*100)/100)+" cм./c."
+		}
+		if(poz<vor2_poz){
+			document.getElementById("time_2").innerHTML="t<sub>2</sub>="+time+" с."
+			document.getElementById("speed_2").innerHTML="v<sub>2</sub>="+(Math.floor(speed*100)/100)+" cм./c."
+		}
 		
 		a=9.82*Math.sin(corner)-frict*9.82*Math.cos(corner);
 		poz=speed_0*time+a*time*time/2;
@@ -35,9 +62,7 @@ function tel_poz(){
 			document.getElementById("graf_poz").innerHTML+="<line x1='"+x1+"' y1='"+py1+"' x2='"+x2+"' y2='"+py2+"' />";
 
 		}
-		document.getElementById("time").innerHTML="t="+time+" мс."
-		document.getElementById("pozition").innerHTML="x="+(poz)+" мм."
-		document.getElementById("speed").innerHTML="v="+(speed)+" мм./мc."
+		
 		time++;
 		setTimeout(tel_poz,60);
 	}
@@ -64,9 +89,10 @@ function res_l(){
 	old_poz=0;
 	tel_1.style.left=poz+3+"px";
 	
-	document.getElementById("time").innerHTML="t=0 мс."
-	document.getElementById("pozition").innerHTML="x=0 мм."
-	document.getElementById("speed").innerHTML="v=0 мм./мc."
+	document.getElementById("time_1").innerHTML="t<sub>1</sub>=0 с."
+	document.getElementById("speed_1").innerHTML="v<sub>1</sub>=0 cм./c."
+	document.getElementById("time_2").innerHTML="t<sub>2</sub>=0 с."
+	document.getElementById("speed_2").innerHTML="v<sub>2</sub>=0 cм./c."
 	document.getElementById("graf_speed").innerHTML="";
 	document.getElementById("graf_poz").innerHTML="";
 }

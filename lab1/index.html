@@ -7,7 +7,7 @@
 <script type="text/javascript" src="lab1.js"></script>
 <title>ВИРТУАЛЬНАЯ ЛАБОРАТОРИЯ - Механика №1</title>
 </head>
-<body onload='sten.style.transform=" rotate("+document.getElementById("corner").value+"deg)";'>
+<body onload='on_load();'>
     <div id='page'>
         <center>
 		    <h1>ВИРТУАЛЬНАЯ ЛАБОРАТОРИЯ</h1>
@@ -17,27 +17,53 @@
     	<div id="lab">
 		    <div id="exp">
 			    <div id="sten">
+					<div id="vor_1" class="vor"></div>
+					<div id="vor_2" class="vor"></div>
 					<div id="tel_1"></div>
 				</div>
                 <div id="sto"></div>
 		    </div>
 		    <div id="panel">
-            	<div class="tab" id="time">t=0 мс.</div>
-                <div class="tab" id="pozition">x=0 мм.</div>
-                <div class="tab" id="speed">v=0 мм./мс.</div>
-                Масса:<br />
-                <input type="number" id="mass" onclick="" min="0" /><br  />
-                Коэфицент трения:<br />
-                <input type="number" id="frict"onclick="" min="0" /><br  />
-                Начальная скорость:<br />
-                <input type="number" id="speed_0" onclick="res_l();" value="1" /><br  />
-                Угол:<br />
-                <input type="number" id="corner" onclick='sten.style.transform=" rotate("+document.getElementById("corner").value+"deg)";' max="15" min="-15" value="0" /><br  />
+            	<div class="pan_ob">
+                <b>x<sub>1</sub>=<input type="number"  id="pozition_1" onclick='poz_vor_1();' max="100" min="0" value="10" /></b>
+                </div>
+            	<div class="pan_ob">
+                <b><p id="time_1">t<sub>1</sub>=0 с.</p></b>
+                </div>
+            	<div class="pan_ob">
+                <b><p id="speed_1">v<sub>1</sub>=0 cм./с.</p></b>
+                </div>
+                <div class="pan_ob">
+                <b>x<sub>2</sub>=<input type="number"  id="pozition_2" onclick='poz_vor_2();' max="100" min="0" value="50" /></b>
+                </div>
+            	<div class="pan_ob">
+                <b><p id="time_2">t<sub>2</sub>=0 с.</p></b>
+                </div>
+            	<div class="pan_ob">
+                <b><p id="speed_2">v<sub>2</sub>=0 cм./с.</p></b>
+                </div>
+            	<div class="pan_ob">
+                <b>m=<input type="number" id="mass" onclick="" min="0" value="1"/></b>
+                </div>
+            	<div class="pan_ob">
+                <b>µ=<input type="number" id="frict"onclick="" min="0" value="0"/></b>
+                </div>
+            	<div class="pan_ob">
+                <b>V<sub>0</sub>=<input type="number" id="speed_0" onclick="res_l();" value="1" /></b>
+                </div>
+            	<div class="pan_ob">
+                <b>α=<input type="number" id="corner" onclick='sten.style.transform=" rotate("+document.getElementById("corner").value+"deg)";' max="15" min="-15" value="0" /></b>
+                </div>
+            	<div class="pan_ob" onclick="start_l();">
+                <b><p>СТАРТ</p></b>
+                </div>
+            	<div class="pan_ob" onclick="stop_l();">
+                <b><p>СТОП</p></b>
+                </div>
+            	<div class="pan_ob" onclick="res_l();">
+                <b><p>СБРОС</p></b>
+                </div>
                 
-                <input type="button" onclick="add_dat();" value="Добавить датчик" /><br />
-                <input type="button" onclick="start_l();" value="Старт" /><br />
-                <input type="button" onclick="stop_l();" value="Стоп" /><br />
-                <input type="button" onclick="res_l();" value="Сброс" /><br />
 		    </div>
             <div class="graf" style="background-image:url(../img/xt.png)">
 				<svg id="graf_poz" xmlns="http://www.w3.org/2000/svg" version="1.1" width="375px" height="250px" style="left:0px;">
