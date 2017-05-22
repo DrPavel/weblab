@@ -17,20 +17,28 @@
     	<div id="lab">
 		    <div id="exp">
 			    <div id="sten"></div>
-                <div id="kol">
-                <div class="gruz"></div>
-                </div>
+                <div id="kol"></div>
                 <div id="block"></div>
             </div>
 		    <div id="panel">
-            	<div class="tab" id="time">t=0 мс.</div>
-                <div class="tab" id="pozition">x=0 мм.</div>
-                <div class="tab" id="speed">v=0 мм./мс.</div>
-                
-                <input type="button" onclick="add_dat();" value="Добавить датчик" /><br />
-                <input type="button" onclick="start_l();" value="Старт" /><br />
-                <input type="button" onclick="stop_l();" value="Стоп" /><br />
-                <input type="button" onclick="res_l();" value="Сброс" /><br />
+	            <div class="pan_ob">
+                <b><p id="time">t=0 с.</p></b>
+                </div>
+                <div class="pan_ob">
+                <b>m=<input type="number" id="mass" onclick="" min="0" value="1"/></b>
+                </div>
+                <div class="pan_ob">
+                <b>R=<input type="number" id="rad" onclick="" min="0" value="1"/></b>
+                </div>
+                <div class="pan_ob" onclick="start_l();">
+                <b><p>СТАРТ</p></b>
+                </div>
+            	<div class="pan_ob" onclick="stop_l();">
+                <b><p>СТОП</p></b>
+                </div>
+            	<div class="pan_ob" onclick="res_l();">
+                <b><p>СБРОС</p></b>
+                </div>
 		    </div>
             <div class="graf" style="background-image:url(../img/xt.png)">
 				<svg id="graf_poz" xmlns="http://www.w3.org/2000/svg" version="1.1" width="375px" height="250px" style="left:0px;">
