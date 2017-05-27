@@ -20,10 +20,10 @@
 
 #block{
 	background-image:url(../img/lab3_block.png);
-	width:13px;
-	height:14px;
+	width:27px;
+	height:17px;
 	position:absolute;
-	left:26px;
+	left:20px;
 	top:15px;
 }
 

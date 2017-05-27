@@ -3,7 +3,7 @@ var r=0;
 var m=0;
 var h=0;
 var q=0;
-var time=0;
+var time=0.000;
 
 
 function tel_poz(){
@@ -13,12 +13,12 @@ function tel_poz(){
 	
 		//var a=rs*m*g/1;
 		h=0.046*m*9.82*time*time/(8*0.220*r);
-		q=h*360/100;
-		block.style.top=((h)*4+15)+"px";
+		q=h*360/100*6.9197;
+		block.style.top=((h)*3.81+15)+"px";
 		kol.style.transform=" rotate(-"+(q)+"deg)";
-		document.getElementById("time").innerHTML="t="+time+" с."
-		time++;
-		setTimeout(tel_poz,60);
+		document.getElementById("time").innerHTML="t="+Math.abs((Math.floor(time*100)/100))+" с."
+		time+=0.05;
+		setTimeout(tel_poz,50);
 	}
 }
 

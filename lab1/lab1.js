@@ -1,4 +1,4 @@
-var time=0;
+var time=0.000;
 var poz=0;
 var lab=false;
 var dat=0;
@@ -34,12 +34,12 @@ function tel_poz(){
 	
 	if((poz<100)&&(lab==true)&&(poz>=0)){
 		tel_1.style.left=((poz/1)*4.78+3)+"px";
-		if((poz<(vor1_poz+5))&&(poz>(vor1_poz-5))){
-			document.getElementById("time_1").innerHTML="t<sub>1</sub>="+time+" с."
+		if((poz<(vor1_poz+2))&&(poz>(vor1_poz-2))){
+			document.getElementById("time_1").innerHTML="t<sub>1</sub>="+Math.abs((Math.floor(time*100)/100))+" с."
 			document.getElementById("speed_1").innerHTML="v<sub>1</sub>="+Math.abs((Math.floor(speed*100)/100))+" cм./c."
 		}
-		if((poz<(vor2_poz+5))&&(poz>(vor2_poz-5))){
-			document.getElementById("time_2").innerHTML="t<sub>2</sub>="+time+" с."
+		if((poz<(vor2_poz+2))&&(poz>(vor2_poz-2))){
+			document.getElementById("time_2").innerHTML="t<sub>2</sub>="+Math.abs((Math.floor(time*100)/100))+" с."
 			document.getElementById("speed_2").innerHTML="v<sub>2</sub>="+Math.abs((Math.floor(speed*100)/100))+" cм./c."
 		}
 		
@@ -59,8 +59,8 @@ function tel_poz(){
 
 		}
 		
-		time++;
-		setTimeout(tel_poz,60);
+		time+=0.05;
+		setTimeout(tel_poz,50);
 	}
 }
 
