@@ -34,3 +34,42 @@
 	position:absolute;
 	left:50px;
 }
+
+#ver{
+	background-image:url(../img/lab3_ver.png);
+	width:7px;
+	height:6px;
+	position:absolute;
+	left:29px;
+	top:13px;
+}
+
+.kol_block{
+	background-image:url(../img/lab3_block_kol.png);
+	width:13px;
+	height:14px;
+	position:absolute;	
+}
+
+#kol1{
+	left:121px;
+	top:4px;
+}
+#kol2{
+	left:120px;
+	top:234px;
+}
+#kol3{
+	left:6px;
+	top:120px;
+	transform:rotate(90deg);
+}
+#kol4{
+	left:236px;
+	top:120px;
+	transform:rotate(90deg);
+}
+
+#panel{
+	height:500px;
+}
